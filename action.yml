@@ -1,0 +1,26 @@
+name: 'Issue Timer'
+
+description: 'Measures and labels issues based on time in Column in a Project'
+
+inputs:
+  GITHUB_TOKEN:
+    description: Secret GitHub API token to use for making API requests.
+    default: ${{ github.token }}
+    required: true
+  PROJECT_ID:
+    description: Project Board ID.
+    default: 1
+    required: true
+  TIME_IN_MINUTES:
+    description: Minimum time a card has been in a column before a label is added
+    default: 1
+    required: true
+  LABEL_NAME:
+    description: Label name to add to issue when it has spent time exceeding TIME_IN_MINUTES in a column
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.project_name}}
