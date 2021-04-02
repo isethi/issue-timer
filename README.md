@@ -1,4 +1,4 @@
-# Tags Issues Which have not moved in project board
+# Tag Issues Which have not moved in project board
 
 The goal of this action is to label issues which have been in a column in a project for a certain amount of time.
 
