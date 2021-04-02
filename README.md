@@ -16,6 +16,8 @@ This action can be helpful if you use project boards to manage stages of a proje
 name: Example
 on: 
   workflow_dispatch:
+  project_card:
+    types: [created, moved]
   push:
     branches: [main]
 
@@ -33,7 +35,7 @@ jobs:
     - uses: actions/setup-go@v2
       with:
         go-version: '1.15.8'
-    - name: Test
+    - name: Example
       uses: isethi/issue-timer@main
       with:
         PROJECT_ID: 1
